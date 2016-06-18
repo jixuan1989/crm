@@ -20,13 +20,9 @@ Ext.define('zft.controller.base.T10101Controller', {
 		this.control({
 			't10101Main' : {
 				select : function() {
-					//Ext.getCmp('delete').setDisabled(0);
-					//Ext.getCmp('reload').setDisabled(0);
 					Ext.getCmp('detail').setDisabled(0);
 				},
 				deselect : function() {
-					/*Ext.getCmp('delete').setDisabled(1);
-					Ext.getCmp('reload').setDisabled(1);*/
 					Ext.getCmp('detail').setDisabled(1);
 				}
 			},

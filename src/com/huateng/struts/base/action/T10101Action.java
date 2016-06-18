@@ -9,11 +9,19 @@ import java.util.Map;
 import com.huateng.bo.base.T10101BO;
 import com.huateng.common.Constants;
 import com.huateng.common.ErrorCode;
+import com.huateng.common.Operator;
+import com.huateng.commquery.dao.ICommQueryDAO;
+import com.huateng.po.BaseTblRoleFuncMapId;
 import com.huateng.po.TblBrhInfo;
 import com.huateng.struts.system.action.BaseAction;
 import com.huateng.system.util.BeanUtils;
 import com.huateng.system.util.CommonFunction;
 import com.huateng.system.util.ContextUtil;
+import com.huateng.system.util.JSONBean;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * Title:机构维护
@@ -28,6 +36,9 @@ import com.huateng.system.util.ContextUtil;
  * 
  * @version 1.0
  */
+@Data
+@EqualsAndHashCode(callSuper=false)
+@NoArgsConstructor
 public class T10101Action extends BaseAction {
 	
 	private static final long serialVersionUID = 1L;
@@ -195,109 +206,5 @@ public class T10101Action extends BaseAction {
 		operator.setBrhBelowMap(CommonFunction.getBelowBrhMap(brhMap));
 		operator.setBrhBelowId(CommonFunction.getBelowBrhInfo(operator.getBrhBelowMap()));
 	}
-	
-	
-	public String getBrhId() {
-		return brhId;
-	}
-
-	public void setBrhId(String brhId) {
-		this.brhId = brhId;
-	}
-
-	public String getBrhLvl() {
-		return brhLvl;
-	}
-
-	public void setBrhLvl(String brhLvl) {
-		this.brhLvl = brhLvl;
-	}
-
-	public String getUpBrhId() {
-		return upBrhId;
-	}
-
-	public void setUpBrhId(String upBrhId) {
-		this.upBrhId = upBrhId;
-	}
-
-	public String getBrhName() {
-		return brhName;
-	}
-
-	public void setBrhName(String brhName) {
-		this.brhName = brhName;
-	}
-
-	public String getBrhAddr() {
-		return brhAddr;
-	}
-
-	public void setBrhAddr(String brhAddr) {
-		this.brhAddr = brhAddr;
-	}
-
-	public String getBrhTelNo() {
-		return brhTelNo;
-	}
-
-	public void setBrhTelNo(String brhTelNo) {
-		this.brhTelNo = brhTelNo;
-	}
-
-	public String getPostCode() {
-		return postCode;
-	}
-
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
-	}
-
-	public String getBrhContName() {
-		return brhContName;
-	}
-
-	public void setBrhContName(String brhContName) {
-		this.brhContName = brhContName;
-	}
-
-	public String getCupBrhId() {
-		return cupBrhId;
-	}
-
-	public void setCupBrhId(String cupBrhId) {
-		this.cupBrhId = cupBrhId;
-	}
-
-	public String getBrhDataList() {
-		return brhDataList;
-	}
-
-	public void setBrhDataList(String brhDataList) {
-		this.brhDataList = brhDataList;
-	}
-
-	public String getResv1() {
-		return resv1;
-	}
-
-	public void setResv1(String resv1) {
-		this.resv1 = resv1;
-	}
-
-	/**
-	 * @return the brhType
-	 */
-	public String getBrhType() {
-		return brhType;
-	}
-
-	/**
-	 * @param brhType the brhType to set
-	 */
-	public void setBrhType(String brhType) {
-		this.brhType = brhType;
-	}
-	
 	
 }

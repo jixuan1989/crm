@@ -24,6 +24,10 @@ import com.huateng.system.util.SysCodeUtil;
 import com.huateng.system.util.TxnInfoUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 /**
  * Title:所有action的基类
  * 
@@ -37,6 +41,9 @@ import com.opensymphony.xwork2.ActionSupport;
  * 
  * @version 1.0
  */
+@Data
+@EqualsAndHashCode(callSuper=false)
+@NoArgsConstructor
 public abstract class BaseAction extends ActionSupport {
 	private static Logger log = Logger.getLogger("DEBUG");
 	private static final long serialVersionUID = -5921599244769853409L;
@@ -56,20 +63,6 @@ public abstract class BaseAction extends ActionSupport {
 	/**JSON数据对象*/
 	protected JSONBean jsonBean = new JSONBean();
 	
-	public String getTxnId() {
-		return txnId;
-	}
-
-	public void setTxnId(String txnId) {
-		this.txnId = txnId;
-	}
-	public String getMethod() {
-		return method;
-	}
-
-	public void setMethod(String method) {
-		this.method = method;
-	}
 	@Override
 	public String execute() {
 		//操作日志
