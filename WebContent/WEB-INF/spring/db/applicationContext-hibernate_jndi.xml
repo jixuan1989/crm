@@ -68,25 +68,11 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>hbm/risk/TblRiskInf.hbm.xml</value>
-				<value>hbm/risk/TblRiskInfUpdLog.hbm.xml</value> 
 				<value>hbm/system/TblFuncInf.hbm.xml</value>
 				<value>hbm/system/TblRoleInf.hbm.xml</value>
 				<value>hbm/system/TblRoleFuncMap.hbm.xml</value>
 				<value>hbm/system/TblTxnInfo.hbm.xml</value>
-				<value>hbm/mchnt/TblMchntRefuse.hbm.xml</value>
-				<value>hbm/mchnt/TblMchtBaseInf.hbm.xml</value>
-				<value>hbm/mchnt/TblMchtBaseInfTmp.hbm.xml</value>
-				<value>hbm/pos/TblTermInfTmp.hbm.xml</value>
-				<value>hbm/pos/TblTermInf.hbm.xml</value>
-				<value>hbm/mchnt/TblMchtLoadInfTmp.hbm.xml</value>
-				<value>hbm/mchnt/TblMchtSettleLoadTmp.hbm.xml</value>
-				<value>hbm/mchnt/TblReceiptInf.hbm.xml</value>
 				<value>hbm/base/TblBrhInfo.hbm.xml</value>
-				<value>hbm/mchnt/TblMchtShopping.hbm.xml</value>
-				<value>hbm/mchnt/TblMchtShoppingReal.hbm.xml</value>
-				<value>hbm/mchnt/TblModDetail.hbm.xml</value>
-				<value>hbm/mchnt/TblModRec.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

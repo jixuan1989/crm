@@ -92,7 +92,6 @@
 				<value>hbm/base/TblCityCode.hbm.xml</value>
 				<value>hbm/base/TblCompanyStepment.hbm.xml</value>
 			    <value>hbm/base/TblCompanyEmployee.hbm.xml</value>
-			    <value>hbm/base/TblSalTpGrp.hbm.xml</value>			    
 			</list>
 		</property>
 	</bean>
