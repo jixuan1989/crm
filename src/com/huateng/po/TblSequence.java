@@ -27,6 +27,10 @@ package com.huateng.po;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * Title:
  * 
@@ -40,6 +44,10 @@ import java.io.Serializable;
  * 
  * @version 1.0
  */
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TblSequence implements Serializable{
 	
 	/**
@@ -50,75 +58,4 @@ public class TblSequence implements Serializable{
 	private String tableName;
 	private String nowDate ;
 	
-	
-	/**
-	 * @return the nowDate
-	 */
-	public String getNowDate() {
-		return nowDate;
-	}
-	/**
-	 * @param nowDate the nowDate to set
-	 */
-	public void setNowDate(String nowDate) {
-		this.nowDate = nowDate;
-	}
-	/**
-	 * 
-	 */
-	public TblSequence() {
-		super();
-	}
-	private int hashCode = Integer.MIN_VALUE;
-	
-	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
-	 * @return the tableName
-	 */
-	public String getTableName() {
-		return tableName;
-	}
-	/**
-	 * @param tableName the tableName to set
-	 */
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-	}
-	public boolean equals (Object obj) {
-		if (null == obj) return false;
-		if (!(obj instanceof com.huateng.po.TblSequence)) return false;
-		else {
-			com.huateng.po.TblSequence tblSequence = (com.huateng.po.TblSequence) obj;
-			if (null == this.getId() || null == tblSequence.getId()) return false;
-			else return (this.getId().equals(tblSequence.getId()));
-		}
-	}
-
-	public int hashCode () {
-		if (Integer.MIN_VALUE == this.hashCode) {
-			if (null == this.getId()) return super.hashCode();
-			else {
-				String hashStr = this.getClass().getName() + ":" + this.getId().hashCode();
-				this.hashCode = hashStr.hashCode();
-			}
-		}
-		return this.hashCode;
-	}
-
-
-	public String toString () {
-		return super.toString();
-	}
 }
