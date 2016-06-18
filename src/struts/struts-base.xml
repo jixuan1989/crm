@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="base" extends="struts-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!--公司人员管理 -->
+		<action name="T10601Action" class="com.huateng.struts.base.action.T10601Action" />
+		<!-- 操作员信息维护 -->
+		<action name="T10401Action" class="com.huateng.struts.base.action.T10401Action" />
+		<!-- 角色信息维护 -->
+		<action name="T10301Action" class="com.huateng.struts.base.action.T10301Action" />
+		<!-- 系统参数信息维护 -->
+		<action name="T10202Action" class="com.huateng.struts.base.action.T10202Action" />		
+		 <!-- 机构信息维护 -->
+		 <action name="T10101Action" class="com.huateng.struts.base.action.T10101Action" />
+		<!-- 银联卡表维护-->
+		<action name="T10205Action" class="com.huateng.struts.base.action.T10205Action" />
+		<!-- CA银联公钥维护-->
+		<action name="T10206Action" class="com.huateng.struts.base.action.T10206Action" />
+		<!-- IC卡其他参数维护-->
+		<action name="T10208Action" class="com.huateng.struts.base.action.T10208Action" />
+		<!--公司部门管理 -->
+		<action name="T10500Action" class="com.huateng.struts.base.action.T10500Action" />
+		<!-- 地区码信息维护 -->
+		<action name="T10201Action" class="com.huateng.struts.base.action.T10201Action" />
+		<action name="T10210Action" class="com.huateng.struts.base.action.T10210Action" />
+		<!-- Mis商户交易管理-->
+		<action name="T10901Action" class="com.huateng.struts.base.action.T10901Action" />
+		<!-- 交易码信息维护 -->
+		<action name="T10203Action" class="com.huateng.struts.base.action.T10203Action" />
+		 <!-- 通道信息维护 -->
+		<action name="T11003Action" class="com.huateng.struts.base.action.T11003Action" />
+		 <!-- 交易路由设定  -->
+	    <action name="T11002Action" class="com.huateng.struts.base.action.T11002Action" />
+	    <!-- 交易路由管理 -->
+	    <action name="T11001Action" class="com.huateng.struts.base.action.T11001Action" />
+	     <!-- 行业细类管理 -->
+	    <action name="T10228Action" class="com.huateng.struts.base.action.T10228Action" />
+	     <!--商户结算金额管理-->
+	    <action name="T10227Action" class="com.huateng.struts.base.action.T10227Action" />
+	     <!--快钱终端管理-->
+	    <action name="T10233Action" class="com.huateng.struts.base.action.T10233Action" />
+	     <!--MCC池管理-->
+	    <action name="T10229Action" class="com.huateng.struts.base.action.T10229Action" />
+	     <!--通道池管理-->
+	    <action name="T10230Action" class="com.huateng.struts.base.action.T10230Action" />
+	    <!--商户池管理-->
+	    <action name="T10231Action" class="com.huateng.struts.base.action.T10231Action" />
+	    <!--通道预警报表-->
+	    <action name="T10232Action" class="com.huateng.struts.base.action.T10232Action" />
+	    <!-- 银联商户银联签到管理 -->
+	    <action name="T10801Action" class="com.huateng.struts.base.action.T10801Action" />
+	    <!--冻结明细-->
+	    <action name="T10227FrozDtlAction" class="com.huateng.struts.base.action.T10227FrozDtlAction" />
+	    <!--卡BIN池维护-->
+	    <action name="T10236Action" class="com.huateng.struts.base.action.T10236Action" />
+	    <!--银行池维护-->
+	    <action name="T10237Action" class="com.huateng.struts.base.action.T10237Action" />
+	    <!--新商户池维护-->
+	    <action name="T10238Action" class="com.huateng.struts.base.action.T10238Action" />
+	     <!--新通道维护-->
+	    <action name="T10239Action" class="com.huateng.struts.base.action.T10239Action" />
+	     <!--新通道控制维护-->
+	    <action name="T10242Action" class="com.huateng.struts.base.action.T10242Action" />
+	    <!--新通道池维护-->
+	    <action name="T10243Action" class="com.huateng.struts.base.action.T10243Action" />
+	    <!--清算通道维护-->
+	    <action name="T10244Action" class="com.huateng.struts.base.action.T10244Action" />
+	    <!--清算控制维护-->
+	    <action name="T10245Action" class="com.huateng.struts.base.action.T10245Action" />
+	</package>
+</struts>

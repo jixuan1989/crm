@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grids>
+	<!-- 机构信息 -->
+	<Grid id="brhInfo" type="sync">
+		<Columns>
+			<![CDATA[brhId,brhLvl,brhType,upBrhId,brhName,brhAddr,brhTelNo,postCode,brhContName,cupBrhId,resv1]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBrhInfoBelow" />
+		</SyncMode>
+	</Grid>
+	<!-- 机构下操作员信息 -->
+	<Grid id="oprInfoWithBrh" type="sync">
+		<Columns>
+			<![CDATA[oprId,brhId,oprName,oprGender,registerDt,oprTel,oprMobile]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getOprInfoWithBrh" />
+		</SyncMode>
+	</Grid>
+	<!-- 系统参数信息 -->
+	<Grid id="sysParamInfo" type="sql">
+		<Columns>
+			<![CDATA[owner,key,type,value,descr,reserve]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select owner,key,type,value,descr,reserve from cst_sys_param where (type = '00' or type = '01') ]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string" operator="EQ" logic="AND">
+					<DataBaseColumn>owner</DataBaseColumn>
+					<QueryColumn>owner</QueryColumn>
+				</where>
+				<where type="string" operator="EQ" logic="AND">
+					<DataBaseColumn>value</DataBaseColumn>
+					<QueryColumn>value</QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 操作员列表 -->
+	<Grid id="oprInfo" type="sync">
+		<Columns>
+			<![CDATA[oprId,brhId,oprDegree,oprName,oprGender,registerDt,oprTel,oprMobile,pwdOutDate,oprSta]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getOprInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 职位信息维护A.POSITION_NAME,A.POSITION_DES,A.CREATE_TIME,A.CREATE_OPR -->
+	<Grid id="positionInf" type="sync">
+		<Columns>
+			<![CDATA[id,positionName,positionDes,createTime,createOpr]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPositionInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 操作员交易日志 -->
+	<Grid id="txnInfo" type="sync">
+		<Columns>
+			<![CDATA[oprId,txnDate,txnTime,txnName,txnSta,errMsg]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 公司部门管理-->
+	<Grid id="companyInfo" type="sync">
+		<Columns>
+			<![CDATA[id,name,stepId,brhId]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getCompanyInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 公司人员查询-->
+	<Grid id="companyEmployeeInfo" type="sync">
+		<Columns>
+			<![CDATA[employeeNum,employeeId,name,sex,stepment,job,contact,levels,education,email,entryTime,telephone,rotationTime,professional,graduate,birthday,presentAddress,permanentAddress,identityNum,contactTelephone,overTime,mobiephone,parentId]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getCompanyEmployeeInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 公司人员管理 -->
+	<Grid id="companyEmployee" type="sync">
+		<Columns>
+			<![CDATA[employeeNum,employeeId,name,sex,stepment,job,levels,edution,email,entryTime,telephone,parentId]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getCompanyEmployee" />
+		</SyncMode>
+	</Grid>
+	<!-- 权限列表 -->
+	<Grid id="roleInfo" type="sql">
+		<Columns>
+			<![CDATA[roleId,roleName,roleType,description,recUpdOpr,recCrtTs,recUpdTs]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select ROLE_ID,ROLE_NAME,ROLE_TYPE,DESCRIPTION,REC_UPD_OPR,REC_CRT_TS,REC_UPD_TS from tbl_role_inf where ROLE_ID != 1 order by ROLE_ID]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	
+	<!--机构地区码只包含地区码与地区名称-->
+	<Grid id="oldCityCodeInfo" type="sql">
+		<Columns>
+			<![CDATA[cityCode,cityName]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select distinct(city_code_old),city_name from cst_city_code]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 地区码信息 -->
+	<Grid id="cityCodeInfo" type="sql">
+		<Columns>
+			<![CDATA[cupCityCode,mchtCityCode,cityName,initTime,modiTime]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select CUP_CITY_CODE,MCHT_CITY_CODE,city_name,init_time,modi_time from cst_city_code where 1=1 ]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string" operator="EQ" logic="AND">
+					<DataBaseColumn>city_name</DataBaseColumn>
+					<QueryColumn>cityName</QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+</Grids>

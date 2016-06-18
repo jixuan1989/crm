@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--<constant name="struts.multipart.saveDir" value="/weblogic/tmp/"></constant>  -->
+	<constant name="struts.multipart.saveDir" value="/home/zftact/apache-tomcat-7.0.42/temp/"></constant>
+	<constant name="struts.action.extension" value="asp"></constant>
+	<package name="system" extends="struts-default">
+		<!-- 权限拦截器 -->
+		<interceptors>
+            <interceptor name="myAuthInterceptor" class ="com.huateng.system.util.SystemInterceptorAction"></interceptor>
+            <interceptor-stack name="authInterceptorStack">
+           	 	<interceptor-ref name="defaultStack"></interceptor-ref>
+           	 	<interceptor-ref name="myAuthInterceptor"></interceptor-ref>
+			</interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="authInterceptorStack"></default-interceptor-ref>
+        
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/system/emptyLocation.jsp</param>
+			</result>
+			<result name="login" type="redirect">logout.asp</result>
+			<result name="main" type="redirect">redirect.asp</result>
+			
+		</global-results>
+		
+		<!-- 系统登录 -->
+		<action name="login" class="com.huateng.struts.system.action.LoginAction" />
+		
+		<!-- 登录成功跳转 -->
+		<action name="redirect" class="com.huateng.struts.system.action.LoginRedirectAction">
+			<result>/page/system/main.jsp</result>
+		</action>
+		<!-- 短信验证 -->
+		<action name="msgValidate" class="com.huateng.struts.system.action.MsgValidateAction">
+			<result>/page/system/main.jsp</result>
+		</action>
+		<!-- 初始化菜单树 -->
+		<action name="tree" class="com.huateng.struts.system.action.TreeDataAction" />
+		
+		<!-- 获取列表数据 -->
+		<action name="gridPanelStoreAction" 
+		class="com.huateng.struts.system.action.GridPanelStoreAction" />
+		
+		<!-- 修改操作员密码 -->
+		<action name="resetPwd" 
+		class="com.huateng.struts.system.action.ResetPwdAction" />
+		<!-- 屏幕锁定解锁 -->
+		<action name="unlockScreen" 
+		class="com.huateng.struts.system.action.UnLockScreenAction" />
+		<!-- 退出系统 -->
+		<action name="logout" 
+		class="com.huateng.struts.system.action.LogoutAction" >
+			<result>/page/system/login.jsp</result>
+		</action>
+		<!--系统超时-->
+		<action name="timeout" 
+		class="com.huateng.struts.system.action.TimeOutAction" >
+			<result>/page/system/timeout.jsp</result>
+		</action>
+		<!-- 上传文件 -->
+		<action name="uploadFile" 
+		class="com.huateng.struts.system.action.FileUploadAction" />
+		
+		<!-- 数据获取 -->
+		<action name="baseSelect" 
+			class="com.huateng.common.select.SelectOptionStruts" method='loadComboStruts'/>
+			
+		<!-- 带前端匹配的数据获取-->
+		<action name="dynamicSelect" 
+			class="com.huateng.common.select.DynamicOptionStruts" method='loadComboStruts'/>
+			 
+		<!-- 数据获取 -->
+		<action name="loadRecordAction" 
+			class="com.huateng.common.select.LoadRecordAction" method='loadRecord'/>
+	</package>
+    <!-- 基本信息管理 -->
+    <include file="struts/struts-base.xml" />
+    
+</struts>

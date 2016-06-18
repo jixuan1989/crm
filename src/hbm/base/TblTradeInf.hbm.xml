@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huateng.po.base">
+	<class name="TblTradeInf" table="TBL_TRADE_INF" >
+		<id name="id" type="string" column="id">
+			<generator class="assigned" />
+		</id>
+		<property  name="txnNo" column="TXN_NO" type="string" length="15"/>
+		<property  name="sendSys" column="SEND_SYS" type="string" length="6"/>
+		<property  name="acceptSys" column="ACCEPT_SYS" type="string" length="6"/>
+		<property  name="beginTs" column="BEGIN_TS" type="string" length="14"/>
+		<property  name="endTs" column="END_TS" type="string" length="14"/>
+		<property  name="txnCode" column="TXN_CODE" type="string" length="8"/>
+		<property  name="rspCode" column="RSP_CODE" type="string" length="2"/>
+		<property  name="reqContent" column="REQ_CONTENT" type="string"/>
+		<property  name="rspContent" column="RSP_CONTENT" type="string"/>
+	</class>
+</hibernate-mapping>

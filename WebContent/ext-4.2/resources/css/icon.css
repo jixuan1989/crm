@@ -1,0 +1,12 @@
+.mchnt {
+	background-image: url(../images/mchnt_16.png) !important;
+}
+.download {
+	background-image: url(../images/download_16.png) !important;
+}
+.upload {
+	background-image: url(../images/upload_16.png) !important;
+}
+.excel {
+    background-image: url( ../images/upload/types/small/files/xls.gif) !important;
+}

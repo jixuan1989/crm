@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.base">
+	<class name="TblRouteInfoN"	table="tbl_txn_route_ctl_N">
+		<meta attribute="sync-DAO">false</meta>
+		<id	name="id" type="string" column="id" length="4">
+			<generator class="assigned"/>
+		</id>
+		<!--优先级-->
+		<property name="ctlId" column="route_ctl_id" type="string" not-null="true" length="3"/>
+		<!-- 使用标示；0-不使用，1-使用 -->
+		<!-- 通道名称 -->
+		<property name="routeName" column="route_name" type='string' length="60"/>
+		<property name="sta" column="route_ctl_sta"	type="string" not-null="true" length="1"/>
+		<!-- 卡类型使用标识 -->
+		<property name="cardTpUseFlag" column="card_tp_use_Flag" type="string" not-null="true" length="1"/>
+		<!-- 卡类型设置 -->
+		<property name="cardTp" column="card_tp" type="string" length="2"/>
+		<!-- 交易代码设置，0-不用，1-使用 -->
+		<property name="txnFlag" column="txn_num_use_flag" type="string" not-null="true" length="1"	/>
+		<!-- 交易代码 -->
+		<property name="txnNum" column="txn_num" type="string"	not-null="false" length="4"	/>
+		<!-- 交易金额设置，0-不用，1-使用 -->
+		<property name="txnAmtFlag"	column="txn_amt_use_flag" type="string"	not-null="true"	length="1"/>
+		<!-- 最小金额；分为单位，例如“000000000001” -->
+		<property name="minTxnAmt" column="min_txn_amt"	type="big_decimal"	not-null="false" length="12"/>
+		<!-- 最大金额；分为单位，例如“000000000001” -->
+		<property name="maxTxnAmt"	column="max_txn_amt" type="big_decimal"	not-null="false" length="12"/>
+		<!-- 商户类型设置，0-不用，1-使用 -->
+		<property name="mchtTypeFlag" column="mcht_type_use_flag" type="string" not-null="true"	length="1"/>
+		<!--商户类型；对应tbl_mcht_base_inf.conn_type -->
+		<property name="mchtType" column="mcht_type" type="string" not-null="false"	length="1"/>
+		<!-- 终端类型设置，0-不用，1-使用 -->
+		<property name="termTypeFlag" column="term_type_use_flag" type="string"	not-null="true"	length="1"/>
+		<!-- 终端类型；对应tbl_term_inf.tp-->
+		<property name="termType" column="term_type" type="string"	not-null="false" length="2"	/>
+		<!--上级商户类型设置，0-不用，1-使用-->
+		<property name="groupFlag" column="mcht_group_use_flag" type="string" not-null="true" length="1"   /> 
+		<!--上级商户号，根据小商户的mcht_group_id字段查找-->
+	    <property name="groupId" column="mcht_group_id" type="string"   length="15" />
+	    <!--商户费率类型设置，0-不用，1-使用-->
+	    <property name="mchtFeeUseFlag" column="mcht_fee_type_use_flag" type="string" not-null="true" length="1"/> 
+	    <!--商户费率类型，0-不封顶扣率，1-封顶扣率-->
+	    <property name="mchtFeeType" column="mcht_fee_type" type="string" length="1" /> 
+	    <!--商户组别使用标志-->
+	    <property name="mchtTpUseFlag" column="mcht_tp_grp_use_flag"  type="string" length="1" not-null="true" />
+	    <!--商户组别-->
+	    <property name="mchtTpGrp" column="mcht_tp_grp" type="string" length="30"/>
+		<!--商户地区码使用标示-->
+		<property name="cityUseFlag" column="city_code_use_flag" type="string" length="1" not-null="true" />
+		<!--商户地区码-->  
+		<property name="cityCode" column="city_code" type="string" length="200"/>   
+	    <!--商户特殊类型使用标示 0-不用，1-使用-->
+	    <property name="mchtModeUseFlag" column="mcht_mode_use_flag" type="string" length="1"  not-null="true" /> 
+	    <!--商户特殊类型-->
+	    <property name="mchtMode" column="mcht_mode" type="string" length="2" />
+	    <!--是否使用特定商户-->
+	    <property name="mchtUseFlag" column="mcht_no_use_flag" type="string"  not-null="true"  length="1" />
+	    <!--特定商户号,中间以|分开-->
+	    <property name="mchtNo" column="mcht_no" type="string" length="4000" />
+		<!-- 交易路由编号-->
+		<property name="instCode" column="inst_code" type="string"  not-null="true"	length="200"	/>
+		<!--备用字段1，暂时不用-->
+		<property name="res1UseFlag" column="reserve1_use_flag" type="string"  not-null="true"	length="1"	/>
+		<!--备用字段1，暂时不用-->
+		<property name="res1" column="reserve1" type="string" length="30"/>
+		<!--备用字段2，暂时不用-->
+		<property name="res2UseFlag" column="reserve2_use_flag" type="string"  not-null="true"	length="1"	/>
+	    <!--备用字段1，暂时不用-->
+	    <property name="res2"  column="reserve2" type="string"  length="30"/>
+		<!--备用字段1，暂时不用-->
+	    <property name="res3UseFlag" column="reserve3_use_flag" type="string"  not-null="true" length= "1"	/>
+	    <!--备用字段1，暂时不用-->
+	    <property name="res3" column="reserve3" type="string" length="30"/>
+		<!-- 插入操作员 -->
+		<property name="crtOpr"	column="crt_opr" type="string"	not-null="false" update="false" length="14"/>
+		<!-- 修改操作员 -->
+		<property name="updOpr"	column="upd_opr" type="string"	not-null="false" length="14"/>
+		<!-- 插入时间-->
+		<property name="crtTs" column="crt_ts" type="string" not-null="false" update="false" length="14"/>
+		<!-- 修改时间 -->
+		<property name="updTs"	column="upd_ts" type="string" not-null="false"	length="14"	/>
+		<!-- 行业细类使用标志 -->
+		<property name="minGrpUseFlag"	column="MIN_GRP_USE_FLAG" type="string" not-null="false"/>
+		<!-- 行业细类 -->
+		<property name="minTpGrp"	column="MIN_TP_GRP" type="string" not-null="false"/>
+		<!-- MCC池使用标志-->
+		<property name="mccNoUseFlag" column="MCC_NO_USE_FLAG" type="string" not-null="false"/>
+		<!-- MCC -->
+		<property name="mccNo" column="MCC_NO" type="string" not-null="false"/>
+		<!-- 产品使用标识-->
+		<property name="proIdUseFlag" column="PRO_ID_USE_FLAG" type="string" not-null="false"/>
+		<!-- 产品编号 -->
+		<property name="proId" column="PRO_ID" type="string" not-null="false"/>
+		<!-- 银行池 -->
+		<property name="bankGrpUseFlag" column="ISSUER_USE_FLAG" type="string" not-null="false"/>
+		<property name="bankGrpId" column="BANK_GRP_ID" type="string" not-null="false"/>
+		<!-- 卡BIN池 -->
+		<property name="binGrpUseFlag" column="BIN_USE_FLAG" type="string" not-null="false"/>
+		<property name="binGrpId" column="BIN_GRP_ID" type="string" not-null="false"/>
+	</class>	
+</hibernate-mapping>

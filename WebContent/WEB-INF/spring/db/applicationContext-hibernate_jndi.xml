@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- jndi连接池，依托weblogic提供 -->
+	<bean id="jndiDataSource" 
+		  class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="jdbc/console">
+		</property>
+	</bean>
+	<!-- 暂时使用同一连接池 -->
+	<bean id="jndiDataSourceQuery" 
+		  class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="jdbc/console">
+		</property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="jndiDataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.huateng.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<!-- 系统 -->
+				<value>hbm/system/TblFuncInf.hbm.xml</value>
+				<value>hbm/system/TblRoleInf.hbm.xml</value>
+				<value>hbm/system/TblRoleFuncMap.hbm.xml</value>
+				<value>hbm/system/TblTxnInfo.hbm.xml</value>
+				<!-- 基本信息管理 --> 
+				<value>hbm/base/TblOprInfo.hbm.xml</value>
+				<value>hbm/base/TblBrhInfo.hbm.xml</value>
+				<value>hbm/base/CstSysParam.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sessionFactoryQuery"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="jndiDataSourceQuery" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.huateng.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hbm/risk/TblRiskInf.hbm.xml</value>
+				<value>hbm/risk/TblRiskInfUpdLog.hbm.xml</value> 
+				<value>hbm/system/TblFuncInf.hbm.xml</value>
+				<value>hbm/system/TblRoleInf.hbm.xml</value>
+				<value>hbm/system/TblRoleFuncMap.hbm.xml</value>
+				<value>hbm/system/TblTxnInfo.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntRefuse.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtBaseInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtBaseInfTmp.hbm.xml</value>
+				<value>hbm/pos/TblTermInfTmp.hbm.xml</value>
+				<value>hbm/pos/TblTermInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtLoadInfTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtSettleLoadTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblReceiptInf.hbm.xml</value>
+				<value>hbm/base/TblBrhInfo.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtShopping.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtShoppingReal.hbm.xml</value>
+				<value>hbm/mchnt/TblModDetail.hbm.xml</value>
+				<value>hbm/mchnt/TblModRec.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--Transaction -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>*Target</value>
+                <value>*BO</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huateng.po.base">
+	<class name="TblBankbinReleInf" table="TBL_BANKBIN_RELE_INF" >
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblBankbinReleInfPK">
+			<key-property name="binGrpId" column="BIN_GRP_ID" type="string" />
+			<key-property name="binNum" column="BIN_NUM" type="string"/>
+		</composite-id>
+		<property  name="binOffset" column="BIN_OFFSET" type="string" length="2"/>
+		<property  name="binLen" column="BIN_LEN" type="string" length="2"/>
+		<property  name="lastOperIn" column="LAST_OPER_IN" type="string" length="1"/>
+		<property  name="updUsrId" column="UPD_USR_ID" type="string" length="40"/>
+		<property  name="recUpdTs" column="REC_UPD_TS" type="string" length="14"/>
+		<property  name="recCrtTs" column="REC_CRT_TS" type="string" length="14" update="false"/>
+	</class>
+</hibernate-mapping>

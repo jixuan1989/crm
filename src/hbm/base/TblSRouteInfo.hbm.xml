@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.base">
+	<class name="TblSRouteInfo"	table="TBL_ROUTE_SETTLE_CTL">
+		<meta attribute="sync-DAO">false</meta>
+		<id	name="id" type="string" column="id" length="4">
+			<generator class="assigned"/>
+		</id>
+		<!--优先级-->
+		<property name="ctlId" column="route_ctl_id" type="string" not-null="true" length="3"/>
+		<!-- 使用标示；0-不使用，1-使用 -->
+		<!-- 通道名称 -->
+		<property name="routeName" column="route_name" type='string' length="60"/>
+		<property name="sta" column="route_ctl_sta"	type="string" not-null="true" length="1"/>
+
+		<!-- 交易金额设置，0-不用，1-使用 -->
+		<property name="txnAmtFlag"	column="txn_amt_use_flag" type="string"	not-null="true"	length="1"/>
+		<!-- 最小金额；分为单位，例如“000000000001” -->
+		<property name="minTxnAmt" column="min_txn_amt"	type="big_decimal"	not-null="false" length="12"/>
+		<!-- 最大金额；分为单位，例如“000000000001” -->
+		<property name="maxTxnAmt"	column="max_txn_amt" type="big_decimal"	not-null="false" length="12"/>
+		<!--商户地区码使用标示-->
+		<property name="cityUseFlag" column="city_code_use_flag" type="string" length="1" not-null="true" />
+		<!--商户地区码-->  
+		<property name="cityCode" column="city_code" type="string" length="200"/>   
+	    <!--是否使用特定商户-->
+	    <property name="mchtUseFlag" column="mcht_no_use_flag" type="string"  not-null="true"  length="1" />
+	    <!--特定商户号,中间以|分开-->
+	    <property name="mchtNo" column="mcht_no" type="string" length="4000" />
+		<!-- 交易路由编号-->
+		<property name="instCode" column="inst_code" type="string"  not-null="true"	length="200"	/>
+		<!-- 修改操作员 -->
+		<property name="updOpr"	column="UPD_USR_ID" type="string"	not-null="false" length="14"/>
+		<!-- 插入时间-->
+		<property name="crtTs" column="REC_CRT_TS" type="string" not-null="false" update="false" length="14"/>
+		<!-- 修改时间 -->
+		<property name="updTs"	column="REC_UPD_TS" type="string" not-null="false"	length="14"	/>
+		<!-- 银行池 -->
+		<property name="bankGrpUseFlag" column="ISSUER_USE_FLAG" type="string" not-null="false"/>
+		<property name="bankGrpId" column="ISSUER_CD" type="string" not-null="false"/>
+		<!-- 卡BIN池 -->
+		<property name="binGrpUseFlag" column="CARD_BIN_USE_FLAG" type="string" not-null="false"/>
+		<property name="binGrpId" column="CARD_BIN" type="string" not-null="false"/>
+		<!-- 账户类型 -->
+		<property name="stlmTypeUseFlag" column="STLM_TYPE_USE_FLAG" type="string" not-null="false"/>
+		<property name="stlmType" column="STLM_TYPE" type="string" not-null="false"/>
+		<property name="lastOperIn" column="LAST_OPER_IN" type="string" />
+	</class>	
+</hibernate-mapping>
