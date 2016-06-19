@@ -5,8 +5,8 @@ import java.util.List;
 import com.huateng.bo.base.T10301BO;
 import com.huateng.common.Constants;
 import com.huateng.commquery.dao.ICommQueryDAO;
-import com.huateng.dao.iface.TblRoleFuncMapDAO;
-import com.huateng.dao.iface.TblRoleInfDAO;
+import com.huateng.dao.impl.base.TblRoleFuncMapDAOImpl;
+import com.huateng.dao.impl.base.TblRoleInfDAOImpl;
 import com.huateng.po.TblRoleFuncMap;
 import com.huateng.po.TblRoleInf;
 
@@ -25,9 +25,9 @@ import com.huateng.po.TblRoleInf;
  */
 public class T10301BOTarget implements T10301BO {
 	
-	private TblRoleInfDAO tblRoleInfDAO;
+	private TblRoleInfDAOImpl tblRoleInfDAO;
 	
-	private TblRoleFuncMapDAO tblRoleFuncMapDAO;
+	private TblRoleFuncMapDAOImpl tblRoleFuncMapDAO;
 	
 	private ICommQueryDAO commQueryDAO;
 	
@@ -93,28 +93,28 @@ public class T10301BOTarget implements T10301BO {
 	/**
 	 * @return the tblRoleInfDAO
 	 */
-	public TblRoleInfDAO getTblRoleInfDAO() {
+	public TblRoleInfDAOImpl getTblRoleInfDAO() {
 		return tblRoleInfDAO;
 	}
 
 	/**
 	 * @param tblRoleInfDAO the tblRoleInfDAO to set
 	 */
-	public void setTblRoleInfDAO(TblRoleInfDAO tblRoleInfDAO) {
+	public void setTblRoleInfDAO(TblRoleInfDAOImpl tblRoleInfDAO) {
 		this.tblRoleInfDAO = tblRoleInfDAO;
 	}
 
 	/**
 	 * @return the tblRoleFuncMapDAO
 	 */
-	public TblRoleFuncMapDAO getTblRoleFuncMapDAO() {
+	public TblRoleFuncMapDAOImpl getTblRoleFuncMapDAO() {
 		return tblRoleFuncMapDAO;
 	}
 
 	/**
 	 * @param tblRoleFuncMapDAO the tblRoleFuncMapDAO to set
 	 */
-	public void setTblRoleFuncMapDAO(TblRoleFuncMapDAO tblRoleFuncMapDAO) {
+	public void setTblRoleFuncMapDAO(TblRoleFuncMapDAOImpl tblRoleFuncMapDAO) {
 		this.tblRoleFuncMapDAO = tblRoleFuncMapDAO;
 	}
 

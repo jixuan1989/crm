@@ -40,7 +40,7 @@ import com.huateng.dao._RootDAO;
  * 
  * @version 1.0
  */
-public class TblCompanyStepmentDAOTarget extends _RootDAO<com.huateng.po.TblCompanyStepment> implements com.huateng.dao.iface.base.TblCompanyStepmentDAO {
+public class TblCompanyStepmentDAOImpl extends _RootDAO<com.huateng.po.TblCompanyStepment> implements com.huateng.dao.iface.base.TblCompanyStepmentDAO {
 
 
 	@Override

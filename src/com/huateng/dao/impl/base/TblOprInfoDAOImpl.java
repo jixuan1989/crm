@@ -3,58 +3,63 @@ package com.huateng.dao.impl.base;
 import java.util.List;
 
 import com.huateng.dao._RootDAO;
-import com.huateng.po.TblOprLog;
+import com.huateng.po.TblOprInfo;
 
 
-public class TblOprLogTarget extends _RootDAO<com.huateng.po.TblOprLog> implements com.huateng.dao.iface.base.TblOprLogDAO{
+public class TblOprInfoDAOImpl extends _RootDAO<com.huateng.po.TblOprInfo> implements com.huateng.dao.iface.base.TblOprInfoDAO{
 
-public TblOprLogTarget () {}
+public TblOprInfoDAOImpl () {}
 
 /* (non-Javadoc)
  * @see com.huateng.dao.iface.TblOprInfoDAO#findAll()
  */
-public List<TblOprLog> findAll() {
+public List<TblOprInfo> findAll() {
 	// TODO Auto-generated method stub
 	return null;
 }
 
-public Class<com.huateng.po.TblOprLog> getReferenceClass () {
-	return com.huateng.po.TblOprLog.class;
+public Class<com.huateng.po.TblOprInfo> getReferenceClass () {
+	return com.huateng.po.TblOprInfo.class;
 }
 
 
 /**
  * Cast the object as a com.huateng.po.TblOprInfo
  */
-public com.huateng.po.TblOprLog cast (Object object) {
-	return (com.huateng.po.TblOprLog) object;
+public com.huateng.po.TblOprInfo cast (Object object) {
+	return (com.huateng.po.TblOprInfo) object;
 }
 
 
-public com.huateng.po.TblOprLog load(java.lang.String key)
+public com.huateng.po.TblOprInfo load(java.lang.String key)
 {
-	return (com.huateng.po.TblOprLog) load(getReferenceClass(), key);
+	return (com.huateng.po.TblOprInfo) load(getReferenceClass(), key);
 }
 
-public com.huateng.po.TblOprLog get(java.lang.String key)
+public com.huateng.po.TblOprInfo get(java.lang.String key)
 {
-	return (com.huateng.po.TblOprLog) get(getReferenceClass(), key);
+	return (com.huateng.po.TblOprInfo) get(getReferenceClass(), key);
 }
 
 @SuppressWarnings("unchecked")
-public java.util.List<com.huateng.po.TblOprLog> loadAll()
+public java.util.List<com.huateng.po.TblOprInfo> loadAll()
 {
 	return loadAll(getReferenceClass());
 }
+
+
+
+
+
 /**
  * Persist the given transient instance, first assigning a generated identifier. (Or using the current value
  * of the identifier property if the assigned generator is used.)
  * @param tblOprInfo a transient instance of a persistent class
  * @return the class identifier
  */
-public java.lang.String save(com.huateng.po.TblOprLog tblOprLog)
+public java.lang.String save(com.huateng.po.TblOprInfo tblOprInfo)
 {
-	return (java.lang.String) super.save(tblOprLog);
+	return (java.lang.String) super.save(tblOprInfo);
 }
 
 /**
@@ -63,9 +68,9 @@ public java.lang.String save(com.huateng.po.TblOprLog tblOprLog)
  * identifier property mapping.
  * @param tblOprInfo a transient instance containing new or updated state
  */
-public void saveOrUpdate(com.huateng.po.TblOprLog tblOprLog)
+public void saveOrUpdate(com.huateng.po.TblOprInfo tblOprInfo)
 {
-	super.saveOrUpdate(tblOprLog);
+	super.saveOrUpdate(tblOprInfo);
 }
 
 
@@ -74,9 +79,9 @@ public void saveOrUpdate(com.huateng.po.TblOprLog tblOprLog)
  * instance with the same identifier in the current session.
  * @param tblOprInfo a transient instance containing updated state
  */
-public void update(com.huateng.po.TblOprLog tblOprLog)
+public void update(com.huateng.po.TblOprInfo tblOprInfo)
 {
-	super.update(tblOprLog);
+	super.update(tblOprInfo);
 }
 
 /**
@@ -84,9 +89,9 @@ public void update(com.huateng.po.TblOprLog tblOprLog)
  * Session or a transient instance with an identifier associated with existing persistent state.
  * @param tblOprInfo the instance to be removed
  */
-public void delete(com.huateng.po.TblOprLog tblOprLog)
+public void delete(com.huateng.po.TblOprInfo tblOprInfo)
 {
-	super.delete((Object) tblOprLog);
+	super.delete((Object) tblOprInfo);
 }
 
 /**

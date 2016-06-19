@@ -1,13 +1,14 @@
-package com.huateng.dao;
+package com.huateng.dao.impl.base;
 
 import java.util.List;
 
+import com.huateng.dao._RootDAO;
 import com.huateng.po.TblRoleFuncMap;
 
 
-public class TblRoleFuncMapDAO extends _RootDAO implements com.huateng.dao.iface.TblRoleFuncMapDAO{
+public class TblRoleFuncMapDAOImpl extends _RootDAO implements com.huateng.dao.iface.base.TblRoleFuncMapDAO{
 
-public TblRoleFuncMapDAO () {}
+public TblRoleFuncMapDAOImpl () {}
 
 /* (non-Javadoc)
  * @see com.huateng.dao.iface.TblRoleFuncMapDAO#findAll()

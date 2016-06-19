@@ -1,4 +1,4 @@
-package com.huateng.dao.base;
+package com.huateng.dao.impl.base;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import com.huateng.dao._RootDAO;
 import com.huateng.po.TblCityCode;
 
 
-public class TblCityCodeDAO extends _RootDAO<com.huateng.po.TblCityCode> implements com.huateng.dao.iface.base.TblCityCodeDAO{
+public class TblCityCodeDAOImpl extends _RootDAO<com.huateng.po.TblCityCode> implements com.huateng.dao.iface.base.TblCityCodeDAO{
 
-public TblCityCodeDAO () {}
+public TblCityCodeDAOImpl () {}
 
 /* (non-Javadoc)
  * @see com.huateng.dao.iface.TblCityCodeDAO#findAll()

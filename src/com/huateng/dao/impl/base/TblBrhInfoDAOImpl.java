@@ -6,9 +6,9 @@ import com.huateng.dao._RootDAO;
 import com.huateng.po.TblBrhInfo;
 
 
-public class TblBrhInfoDAOTarget extends _RootDAO<com.huateng.po.TblBrhInfo> implements com.huateng.dao.iface.base.TblBrhInfoDAO {
+public class TblBrhInfoDAOImpl extends _RootDAO<com.huateng.po.TblBrhInfo> implements com.huateng.dao.iface.base.TblBrhInfoDAO {
 
-	public TblBrhInfoDAOTarget () {}
+	public TblBrhInfoDAOImpl () {}
 	
 	/* (non-Javadoc)
 	 * @see com.huateng.dao.iface.TblBrhInfoDAO#findAll()

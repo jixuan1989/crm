@@ -1,4 +1,4 @@
-package com.huateng.dao.base;
+package com.huateng.dao.impl.base;
 
 import com.huateng.po.TblFuncInf;
 
@@ -7,7 +7,7 @@ import com.huateng.po.TblFuncInf;
 /**
  * This is an automatically generated DAO class which should not be edited.
  */
-public abstract class BaseTblFuncInfDAO extends com.huateng.dao._RootDAO<TblFuncInf> {
+public abstract class BaseTblFuncInfDAOImpl extends com.huateng.dao._RootDAO<TblFuncInf> {
 
 
 

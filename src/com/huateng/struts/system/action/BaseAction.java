@@ -12,7 +12,7 @@ import com.huateng.common.Constants;
 import com.huateng.common.Operator;
 import com.huateng.common.TblTxnInfoConstants;
 import com.huateng.commquery.dao.ICommQueryDAO;
-import com.huateng.dao.iface.TblTxnInfoDAO;
+import com.huateng.dao.iface.base.TblTxnInfoDAO;
 import com.huateng.log.Log;
 import com.huateng.po.TblTxnInfo;
 import com.huateng.po.TblTxnInfoPK;

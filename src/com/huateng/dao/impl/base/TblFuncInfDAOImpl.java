@@ -1,4 +1,4 @@
-package com.huateng.dao.base;
+package com.huateng.dao.impl.base;
 
 import java.util.List;
 import com.huateng.dao._RootDAO;
@@ -7,9 +7,9 @@ import com.huateng.po.TblFuncInf;
 
 
 
-public class TblFuncInfDAO extends _RootDAO<com.huateng.po.TblFuncInf>  implements com.huateng.dao.iface.base.TblFuncInfDAO{
+public class TblFuncInfDAOImpl extends _RootDAO<com.huateng.po.TblFuncInf>  implements com.huateng.dao.iface.base.TblFuncInfDAO{
 
-public TblFuncInfDAO () {}
+public TblFuncInfDAOImpl () {}
 
 public Class<TblFuncInf> getReferenceClass () {
 	return TblFuncInf.class;

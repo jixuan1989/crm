@@ -1,4 +1,4 @@
-package com.huateng.dao.base;
+package com.huateng.dao.impl.base;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import com.huateng.dao._RootDAO;
 import com.huateng.po.CstSysParam;
 
 
-public class CstSysParamDAO extends _RootDAO<com.huateng.po.CstSysParam> implements com.huateng.dao.iface.base.CstSysParamDAO{
+public class CstSysParamDAOImpl extends _RootDAO<com.huateng.po.CstSysParam> implements com.huateng.dao.iface.base.CstSysParamDAO{
 
-public CstSysParamDAO () {}
+public CstSysParamDAOImpl () {}
 
 /* (non-Javadoc)
  * @see com.huateng.dao.iface.CstSysParamDAO#findAll()

@@ -40,7 +40,7 @@ import com.huateng.dao._RootDAO;
  * 
  * @version 1.0
  */
-public class TblCompanyEmployeeDAOTarget  extends _RootDAO<com.huateng.po.TblCompanyEmployee> implements com.huateng.dao.iface.base.TblCompanyEmployeeDAO {
+public class TblCompanyEmployeeDAOImpl  extends _RootDAO<com.huateng.po.TblCompanyEmployee> implements com.huateng.dao.iface.base.TblCompanyEmployeeDAO {
 
 	@Override
 	protected Class<com.huateng.po.TblCompanyEmployee> getReferenceClass() {

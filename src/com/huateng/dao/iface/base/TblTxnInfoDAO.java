@@ -1,51 +1,49 @@
-package com.huateng.dao.iface;
+package com.huateng.dao.iface.base;
 
 
+public interface TblTxnInfoDAO {
+	public com.huateng.po.TblTxnInfo get(com.huateng.po.TblTxnInfoPK key);
 
-public interface TblRoleInfDAO {
-	public com.huateng.po.TblRoleInf get(java.lang.Integer key);
+	public com.huateng.po.TblTxnInfo load(com.huateng.po.TblTxnInfoPK key);
 
-	public com.huateng.po.TblRoleInf load(java.lang.Integer key);
-
-	public java.util.List<com.huateng.po.TblRoleInf> findAll ();
+	public java.util.List<com.huateng.po.TblTxnInfo> findAll ();
 
 
 	/**
 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value
 	 * of the identifier property if the assigned generator is used.) 
-	 * @param tblRoleInf a transient instance of a persistent class 
+	 * @param tblTxnInfo a transient instance of a persistent class 
 	 * @return the class identifier
 	 */
-	public java.lang.Integer save(com.huateng.po.TblRoleInf tblRoleInf);
+	public com.huateng.po.TblTxnInfoPK save(com.huateng.po.TblTxnInfo tblTxnInfo);
 
 	/**
 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default
 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the
 	 * identifier property mapping. 
-	 * @param tblRoleInf a transient instance containing new or updated state 
+	 * @param tblTxnInfo a transient instance containing new or updated state 
 	 */
-	public void saveOrUpdate(com.huateng.po.TblRoleInf tblRoleInf);
+	public void saveOrUpdate(com.huateng.po.TblTxnInfo tblTxnInfo);
 
 	/**
 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent
 	 * instance with the same identifier in the current session.
-	 * @param tblRoleInf a transient instance containing updated state
+	 * @param tblTxnInfo a transient instance containing updated state
 	 */
-	public void update(com.huateng.po.TblRoleInf tblRoleInf);
-	
+	public void update(com.huateng.po.TblTxnInfo tblTxnInfo);
+
 	/**
 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving
 	 * Session or a transient instance with an identifier associated with existing persistent state. 
 	 * @param id the instance ID to be removed
 	 */
-	public void delete(java.lang.Integer id);
+	public void delete(com.huateng.po.TblTxnInfoPK id);
 
 	/**
 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving
 	 * Session or a transient instance with an identifier associated with existing persistent state. 
-	 * @param tblRoleInf the instance to be removed
+	 * @param tblTxnInfo the instance to be removed
 	 */
-	public void delete(com.huateng.po.TblRoleInf tblRoleInf);
-
+	public void delete(com.huateng.po.TblTxnInfo tblTxnInfo);
 
 }

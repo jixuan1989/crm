@@ -43,7 +43,7 @@ import com.huateng.common.Operator;
 import com.huateng.common.StringUtil;
 import com.huateng.common.SysCodeConstants;
 import com.huateng.common.TblTxnInfoConstants;
-import com.huateng.dao.iface.TblTxnInfoDAO;
+import com.huateng.dao.iface.base.TblTxnInfoDAO;
 import com.huateng.dao.iface.base.TblOprInfoDAO;
 import com.huateng.po.TblBrhInfo;
 import com.huateng.po.TblCompanyEmployee;

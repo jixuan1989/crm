@@ -6,9 +6,9 @@ import com.huateng.dao._RootDAO;
 import com.huateng.po.TblPositionInf;
 
 
-public class TblPositionInfDAOTarget extends _RootDAO<com.huateng.po.TblPositionInf> implements com.huateng.dao.iface.base.TblPositionInfDAO {
+public class TblPositionInfDAOImpl extends _RootDAO<com.huateng.po.TblPositionInf> implements com.huateng.dao.iface.base.TblPositionInfDAO {
 
-	public TblPositionInfDAOTarget () {}
+	public TblPositionInfDAOImpl () {}
 	
 	/* (non-Javadoc)
 	 * @see com.huateng.dao.iface.TblBrhInfoDAO#findAll()
